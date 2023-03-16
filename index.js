@@ -172,7 +172,28 @@ const addDepartment = () => {
     });
 };
 
-
+const updateEmployeesRole = () => {
+  inquirer.prompt([
+    {
+      type: "number",
+      name: "employee_id",
+      message: "Employee ID: ",
+    }, {
+      type: "number",
+      name: "role_id",
+      message: "New Role ID: ",
+    }
+  ])
+    .then(function(res) {
+      connection.query("UPDATE employee SET role_id = ? WHERE id = ?", [ res.role_id, res.employee_id ], (err, data) => {
+        if (err) throw err;
+        success();
+        console.log('|| Successfully Updated Employee\'s Role ||');
+        success();
+        mainMenu();
+      });
+    });
+};
 
 const mainMenu = () => {
   inquirer.prompt({
