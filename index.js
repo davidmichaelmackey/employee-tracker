@@ -18,6 +18,21 @@ const connection = mysql.createConnection(
   dots(),
 );
 
+const exitApp = () => {
+  wingT();
+  thankYou();
+  console.log("|| Thank you for using Employee Tracker ||");
+  thankYou();
+  wingB();
+  dots();
+  wingT();
+  wingE();
+  console.log('Goodbye!\n');
+  process.exit(0);
+};
+
+
+
 const mainMenu = () => {
   inquirer.prompt({
     type: 'list',
