@@ -2,13 +2,17 @@
 //! || Module Package Imports ||
 //! ============================
 
-//* MySQL2 Package - Provides a quick and efficient way to connect to a MySQL database and execute queries
+//* 'mysql2' Package - Provides a quick and efficient way to connect to a MySQL database and execute queries
 const mysql = require("mysql2");
 
-//* Inquirer Package - Provides a set of prompts for interacting with the user in a Command-Line Interface
+//* 'inquirer' Package - Provides a set of prompts for interacting with the user in a Command-Line Interface
 const inquirer = require("inquirer");
 
-//? console.table Imported below... ~BUT~ it looks cleaner w/o it. Left it commented out. Feel free to add it back in, if you prefer it.
+//? 'console.table' Package is imported below,
+//? ~ BUT ~
+//? It looks cleaner using the built -in Node.js`console.table();` method,
+//? So it's commented out...
+//? Feel free to 'uncomment' to back in, if you prefer this package.
 // const consoleTable = require("console.table");
 
 //! ====================================
