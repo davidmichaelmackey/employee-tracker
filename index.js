@@ -2,24 +2,30 @@
 //! || Module Package Imports ||
 //! ============================
 
-//* 'mysql2' Package - Provides a quick and efficient way to connect to a MySQL database and execute queries
+// 'mysql2' Package - Provides a quick and efficient way to connect to a MySQL database and execute queries
+
 const mysql = require("mysql2");
 
-//* 'inquirer' Package - Provides a set of prompts for interacting with the user in a Command-Line Interface
+// 'inquirer' Package - Provides a set of prompts for interacting with the user in a Command-Line Interface
+
 const inquirer = require("inquirer");
 
-//? 'console.table' Package is imported below,
-//? ~ BUT ~
-//? It looks cleaner using the built -in Node.js`console.table();` method,
-//? So it's commented out...
-//? Feel free to 'uncomment' to back in, if you prefer this package.
+//? The 'console.table' Package is imported below...
+//? BUT it looks much cleaner using just the built-in Node.js `console.table();` method, so it's commented out. 
+//? Feel free to 'uncomment' to back in, if you prefer the look and feel this package provides.
+
 // const consoleTable = require("console.table");
 
 //! ====================================
 //! || Visual Structure Log Functions ||
 //! ====================================
 
+//* =================
+//* || Dot Visuals ||
+//* =================
+
 // bottom wing
+
 const wingB = () => {
   console.log('...');
   console.log('..');
@@ -27,6 +33,7 @@ const wingB = () => {
 };
 
 // top wing
+
 const wingT = () => {
   console.log('.');
   console.log('..');
@@ -34,6 +41,7 @@ const wingT = () => {
 };
 
 // exit wing extension
+
 const wingE = () => {
   console.log('....');
   console.log('.....');
@@ -42,6 +50,7 @@ const wingE = () => {
 };
 
 // dot extensions
+
 const dots = () => {
   console.log('.');
   console.log('.');
@@ -49,20 +58,23 @@ const dots = () => {
 };
 
 //* ================
-//* || separators ||
+//* || Separators ||
 //* ================
 
 // thank you for using the app separator
+
 const thankYou = () => {
   console.log('==========================================');
 };
 
 // connected to db separator
+
 const connectedTo = () => {
   console.log('======================================');
 };
 
 // successfully updated employee's role
+
 const success = () => {
   console.log('==========================================');
 };
@@ -70,6 +82,8 @@ const success = () => {
 //! ======================================
 //! || Creates a Connection to MySQL DB ||
 //! ======================================
+
+// Creates a connection to the mysql database 'employee_tracker_db'
 
 const connection = mysql.createConnection(
   {
@@ -91,6 +105,8 @@ const connection = mysql.createConnection(
 //! || Exits Application ||
 //! =======================
 
+// Exits the Application and logs a Thank You and Goodbye message
+
 const exitApp = () => {
   wingT();
   thankYou();
@@ -111,7 +127,9 @@ const exitApp = () => {
 //* ======================
 //* || View Departments ||
 //* ======================
+
 // Queries department table and logs it to the console using the built in Node.js method `console.table`
+
 const viewDepartments = () => {
   connection.query("SELECT * FROM department", function(err, data) {
     console.table(data);
@@ -121,7 +139,9 @@ const viewDepartments = () => {
 //* ================
 //* || View Roles ||
 //* ================
+
 // Queries role table and logs it to the console using the built in Node.js method `console.table`
+
 const viewRoles = () => {
   connection.query("SELECT * FROM role", function(err, data) {
     console.table(data);
@@ -132,7 +152,9 @@ const viewRoles = () => {
 //* ====================
 //* || View Employees ||
 //* ====================
+
 // Queries employee table and logs it to the console using the built in Node.js method `console.table`
+
 const viewEmployees = () => {
   connection.query("SELECT * FROM employee", function(err, data) {
     console.table(data);
@@ -147,7 +169,9 @@ const viewEmployees = () => {
 //* ========================
 //* || Adds Employee Data ||
 //* ========================
+
 // Inquirer prompts user, then the function constructs a MySQL query to update the database.
+
 const addEmployee = () => {
   inquirer.prompt([
     {
@@ -181,7 +205,9 @@ const addEmployee = () => {
 //* ====================
 //* || Adds Role Data ||
 //* ====================
+
 // Inquirer prompts user, then the function constructs a MySQL query to update the database.
+
 const addRole = () => {
   inquirer.prompt([
     {
@@ -215,7 +241,9 @@ const addRole = () => {
 //* ==========================
 //* || Adds Department Data ||
 //* ==========================
+
 // Inquirer prompts user, then the function constructs a MySQL query to update the database.
+
 const addDepartment = () => {
   inquirer.prompt([
     {
@@ -243,7 +271,9 @@ const addDepartment = () => {
 //* ============================
 //* || Update Employee's Role ||
 //* ============================
+
 // Inquirer prompts user, then the function constructs a MySQL query to update the database.
+
 const updateEmployeesRole = () => {
   inquirer.prompt([
     {
@@ -270,8 +300,10 @@ const updateEmployeesRole = () => {
 //! ===============================
 //! || Main Menu List of Options ||
 //! ===============================
+
 // Inquirer displays a list of options and prompts user to choose an action
 // Once user has made a selection, the function calls the appropriate function to perform that action
+
 const mainMenu = () => {
   inquirer.prompt({
     type: 'list',
@@ -326,7 +358,9 @@ const mainMenu = () => {
 //! ============================
 //! || Establishes Connection ||
 //! ============================
+
 // Establishes connection and starts up the main menu list of options
+
 connection.connect((err) => {
   if (err) throw err;
   mainMenu();
