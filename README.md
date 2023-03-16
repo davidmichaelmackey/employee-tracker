@@ -33,8 +33,10 @@ Follow these commands to run the command-line application:
 
     mysql -u root -p
     input your password
-    source schema.sql
-    source seeds.sql
+    source schema.sql;
+    source seeds.sql;
+    exit;
+    ---
     npm i
     npm start
 
