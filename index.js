@@ -68,6 +68,27 @@ const exitApp = () => {
   process.exit(0);
 };
 
+const viewDepartments = () => {
+  connection.query("SELECT * FROM department", function(err, data) {
+    console.table(data);
+    mainMenu();
+  });
+};
+
+const viewRoles = () => {
+  connection.query("SELECT * FROM role", function(err, data) {
+    console.table(data);
+    mainMenu();
+  });
+};
+
+const viewEmployees = () => {
+  connection.query("SELECT * FROM employee", function(err, data) {
+    console.table(data);
+    mainMenu();
+  });
+};
+
 
 
 const mainMenu = () => {
