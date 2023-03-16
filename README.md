@@ -5,7 +5,7 @@
 <p align="center">
 <img src="https://img.shields.io/github/languages/count/davidmichaelmackey/employee-tracker?color=FF9AA2&style=for-the-badge" alt="Languages" />
 <img src="https://img.shields.io/github/languages/top/davidmichaelmackey/employee-tracker?color=FFB7B2&style=for-the-badge" alt="Top Language" />
-<img src="https://img.shields.io/github/languages/code-size/davidmichaelmackey/employee-tracker?color=FFDAC1&style=for-the-badge" alt="Code Size" />
+<img src="https://img.shields.io/github/languages/code-size/davidmichaelmackey/employee-tracker?color=FFDAC1&style=for-the-badge" alt="Code Size" /><br>
 <img src="https://img.shields.io/github/repo-size/davidmichaelmackey/employee-tracker?color=E2F0CB&style=for-the-badge" alt="Repo Size" />
 <img src="https://img.shields.io/github/last-commit/davidmichaelmackey/employee-tracker?color=B5EAD7&style=for-the-badge" alt="Last Commit" />
 <img src="https://img.shields.io/github/followers/davidmichaelmackey?style=for-the-badge" alt="Followers" />
