@@ -2,26 +2,34 @@
 //! || Module Package Imports ||
 //! ============================
 
+//* MySQL2 Package - Provides a quick and efficient way to connect to a MySQL database and execute queries
 const mysql = require("mysql2");
+
+//* Inquirer Package - Provides a set of prompts for interacting with the user in a Command-Line Interface
 const inquirer = require("inquirer");
-const consoleTable = require("console.table");
+
+//? console.table Imported below... ~BUT~ it looks cleaner w/o it. Left it commented out. Feel free to add it back in, if you prefer it.
+// const consoleTable = require("console.table");
 
 //! ====================================
 //! || Visual Structure Log Functions ||
 //! ====================================
 
-const wingT = () => {
-  console.log('.');
-  console.log('..');
-  console.log('...');
-};
-
+// bottom wing
 const wingB = () => {
   console.log('...');
   console.log('..');
   console.log('.');
 };
 
+// top wing
+const wingT = () => {
+  console.log('.');
+  console.log('..');
+  console.log('...');
+};
+
+// exit wing extension
 const wingE = () => {
   console.log('....');
   console.log('.....');
@@ -29,20 +37,28 @@ const wingE = () => {
   console.log('.......');
 };
 
+// dot extensions
 const dots = () => {
   console.log('.');
   console.log('.');
   console.log('.');
 };
 
+//* ================
+//* || separators ||
+//* ================
+
+// thank you for using the app separator
 const thankYou = () => {
   console.log('==========================================');
 };
 
+// connected to db separator
 const connectedTo = () => {
   console.log('======================================');
 };
 
+// successfully updated employee's role
 const success = () => {
   console.log('==========================================');
 };
@@ -88,13 +104,20 @@ const exitApp = () => {
 //! || View Tables Functions ||
 //! ===========================
 
+//* ======================
+//* || View Departments ||
+//* ======================
+// Queries department table and logs it to the console using the built in Node.js method `console.table`
 const viewDepartments = () => {
   connection.query("SELECT * FROM department", function(err, data) {
     console.table(data);
     mainMenu();
   });
 };
-
+//* ================
+//* || View Roles ||
+//* ================
+// Queries role table and logs it to the console using the built in Node.js method `console.table`
 const viewRoles = () => {
   connection.query("SELECT * FROM role", function(err, data) {
     console.table(data);
@@ -102,6 +125,10 @@ const viewRoles = () => {
   });
 };
 
+//* ====================
+//* || View Employees ||
+//* ====================
+// Queries employee table and logs it to the console using the built in Node.js method `console.table`
 const viewEmployees = () => {
   connection.query("SELECT * FROM employee", function(err, data) {
     console.table(data);
@@ -113,6 +140,10 @@ const viewEmployees = () => {
 //! || Add to Table Functions ||
 //! ============================
 
+//* ========================
+//* || Adds Employee Data ||
+//* ========================
+// Inquirer prompts user, then the function constructs a MySQL query to update the database.
 const addEmployee = () => {
   inquirer.prompt([
     {
@@ -144,6 +175,10 @@ const addEmployee = () => {
     });
 };
 
+//* ====================
+//* || Adds Role Data ||
+//* ====================
+// Inquirer prompts user, then the function constructs a MySQL query to update the database.
 const addRole = () => {
   inquirer.prompt([
     {
@@ -175,6 +210,10 @@ const addRole = () => {
     });
 };
 
+//* ==========================
+//* || Adds Department Data ||
+//* ==========================
+// Inquirer prompts user, then the function constructs a MySQL query to update the database.
 const addDepartment = () => {
   inquirer.prompt([
     {
@@ -200,6 +239,10 @@ const addDepartment = () => {
 //! || Update Function for Employee's Role ||
 //! =========================================
 
+//* ============================
+//* || Update Employee's Role ||
+//* ============================
+// Inquirer prompts user, then the function constructs a MySQL query to update the database.
 const updateEmployeesRole = () => {
   inquirer.prompt([
     {
@@ -222,10 +265,12 @@ const updateEmployeesRole = () => {
       });
     });
 };
+
 //! ===============================
 //! || Main Menu List of Options ||
 //! ===============================
-
+// Inquirer displays a list of options and prompts user to choose an action
+// Once user has made a selection, the function calls the appropriate function to perform that action
 const mainMenu = () => {
   inquirer.prompt({
     type: 'list',
@@ -280,7 +325,7 @@ const mainMenu = () => {
 //! ============================
 //! || Establishes Connection ||
 //! ============================
-
+// Establishes connection and starts up the main menu list of options
 connection.connect((err) => {
   if (err) throw err;
   mainMenu();
