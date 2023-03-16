@@ -1,6 +1,14 @@
+//! ============================
+//! || Module Package Imports ||
+//! ============================
+
 const mysql = require("mysql2");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
+
+//! ====================================
+//! || Visual Structure Log Functions ||
+//! ====================================
 
 const wingT = () => {
   console.log('.');
@@ -39,6 +47,10 @@ const success = () => {
   console.log('==========================================');
 };
 
+//! ======================================
+//! || Creates a Connection to MySQL DB ||
+//! ======================================
+
 const connection = mysql.createConnection(
   {
     host: "localhost",
@@ -55,6 +67,10 @@ const connection = mysql.createConnection(
   dots(),
 );
 
+//! =======================
+//! || Exits Application ||
+//! =======================
+
 const exitApp = () => {
   wingT();
   thankYou();
@@ -67,6 +83,10 @@ const exitApp = () => {
   console.log('Goodbye!\n');
   process.exit(0);
 };
+
+//! ===========================
+//! || View Tables Functions ||
+//! ===========================
 
 const viewDepartments = () => {
   connection.query("SELECT * FROM department", function(err, data) {
@@ -88,6 +108,10 @@ const viewEmployees = () => {
     mainMenu();
   });
 };
+
+//! ============================
+//! || Add to Table Functions ||
+//! ============================
 
 const addEmployee = () => {
   inquirer.prompt([
@@ -172,6 +196,10 @@ const addDepartment = () => {
     });
 };
 
+//! =========================================
+//! || Update Function for Employee's Role ||
+//! =========================================
+
 const updateEmployeesRole = () => {
   inquirer.prompt([
     {
@@ -194,6 +222,9 @@ const updateEmployeesRole = () => {
       });
     });
 };
+//! ===============================
+//! || Main Menu List of Options ||
+//! ===============================
 
 const mainMenu = () => {
   inquirer.prompt({
@@ -245,6 +276,10 @@ const mainMenu = () => {
     })
     .catch(err => console.log(err));
 };
+
+//! ============================
+//! || Establishes Connection ||
+//! ============================
 
 connection.connect((err) => {
   if (err) throw err;
