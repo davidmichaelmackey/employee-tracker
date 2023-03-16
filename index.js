@@ -2,6 +2,43 @@ const mysql = require("mysql2");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
 
+const wingT = () => {
+  console.log('.');
+  console.log('..');
+  console.log('...');
+};
+
+const wingB = () => {
+  console.log('...');
+  console.log('..');
+  console.log('.');
+};
+
+const wingE = () => {
+  console.log('....');
+  console.log('.....');
+  console.log('......');
+  console.log('.......');
+};
+
+const dots = () => {
+  console.log('.');
+  console.log('.');
+  console.log('.');
+};
+
+const thankYou = () => {
+  console.log('==========================================');
+};
+
+const connectedTo = () => {
+  console.log('======================================');
+};
+
+const success = () => {
+  console.log('==========================================');
+};
+
 const connection = mysql.createConnection(
   {
     host: "localhost",
