@@ -168,7 +168,6 @@ const addEmployee = () => {
   ])
     .then(function(answer) {
       console.log(answer);
-
       let query = `INSERT INTO employee SET ?`;
       connection.query(query, { first_name: answer.firstName, last_name: answer.lastName, role_id: answer.roleId, },
         function(err, res) {
@@ -203,7 +202,6 @@ const addRole = () => {
   ])
     .then(function(answer) {
       console.log(answer);
-
       let query = `INSERT INTO role SET ?`;
       connection.query(query, { title: answer.title, salary: answer.salary, department_id: answer.departmentId, },
         function(err, res) {
@@ -228,7 +226,6 @@ const addDepartment = () => {
   ])
     .then(function(answer) {
       console.log(answer);
-
       let query = `INSERT INTO department SET ?`;
       connection.query(query, { full_name: answer.department, },
         function(err, res) {
