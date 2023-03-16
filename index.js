@@ -89,6 +89,89 @@ const viewEmployees = () => {
   });
 };
 
+const addEmployee = () => {
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "firstName",
+      message: "Employee's First Name: ",
+    },
+    {
+      type: "input",
+      name: "lastName",
+      message: "Employee's Last Name: ",
+    },
+    {
+      type: "number",
+      name: "roleId",
+      message: "Employee's Role ID: ",
+    },
+  ])
+    .then(function(answer) {
+      console.log(answer);
+
+      let query = `INSERT INTO employee SET ?`;
+      connection.query(query, { first_name: answer.firstName, last_name: answer.lastName, role_id: answer.roleId, },
+        function(err, res) {
+          if (err) throw err;
+          mainMenu();
+        }
+      );
+    });
+};
+
+const addRole = () => {
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "title",
+      message: "Role Title: ",
+    },
+    {
+      type: "input",
+      name: "salary",
+      message: "Role Salary: ",
+    },
+    {
+      type: "input",
+      name: "departmentId",
+      message: "Role Department ID: ",
+    },
+  ])
+    .then(function(answer) {
+      console.log(answer);
+
+      let query = `INSERT INTO role SET ?`;
+      connection.query(query, { title: answer.title, salary: answer.salary, department_id: answer.departmentId, },
+        function(err, res) {
+          if (err) throw err;
+          mainMenu();
+        }
+      );
+    });
+};
+
+const addDepartment = () => {
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "department",
+      message: "Department's Name: ",
+    },
+  ])
+    .then(function(answer) {
+      console.log(answer);
+
+      let query = `INSERT INTO department SET ?`;
+      connection.query(query, { full_name: answer.department, },
+        function(err, res) {
+          if (err) throw err;
+          mainMenu();
+        }
+      );
+    });
+};
+
 
 
 const mainMenu = () => {
