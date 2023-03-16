@@ -1,4 +1,3 @@
-
 # { Employee Tracker }
 📊
 ## Badges
@@ -52,22 +51,22 @@ Follow these commands to run the command-line application:
 
 ### Resources
 
-    [MySQL Shell](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-getting-started.html)
-    [Creating Database](https://dev.mysql.com/doc/refman/8.0/en/creating-database.html)
-    [Creating Tables](https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html)
-    [SELECT](https://dev.mysql.com/doc/refman/8.0/en/select.html)
-    [INSERT](https://dev.mysql.com/doc/refman/8.0/en/insert.html)
-    [UPDATE](https://dev.mysql.com/doc/refman/8.0/en/update.html)
-    [DELETE](https://dev.mysql.com/doc/refman/8.0/en/delete.html)
-    [MySQL2 NPM Package](https://www.npmjs.com/package/mysql2)
-    [Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html)
-    [Schema](https://docs.oracle.com/cd/B19306_01/server.102/b14220/schema.htm)
-    [Loading Tables](https://dev.mysql.com/doc/refman/8.0/en/loading-tables.html)
-    [Primary Key](https://dev.mysql.com/doc/refman/8.0/en/constraint-primary-key.html)
-    [Foreign Keys](https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html)
-    [SQL Prepared Statements](https://dev.mysql.com/doc/refman/8.0/en/sql-prepared-statements.html)
-    [Aggregate Functions](https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html)
-    [Join](https://dev.mysql.com/doc/refman/8.0/en/join.html)
+  [MySQL Shell](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-getting-started.html)
+  [Creating Database](https://dev.mysql.com/doc/refman/8.0/en/creating-database.html)
+  [Creating Tables](https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html)
+  [SELECT](https://dev.mysql.com/doc/refman/8.0/en/select.html)
+  [INSERT](https://dev.mysql.com/doc/refman/8.0/en/insert.html)
+  [UPDATE](https://dev.mysql.com/doc/refman/8.0/en/update.html)
+  [DELETE](https://dev.mysql.com/doc/refman/8.0/en/delete.html)
+  [MySQL2 NPM Package](https://www.npmjs.com/package/mysql2)
+  [Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html)
+  [Schema](https://docs.oracle.com/cd/B19306_01/server.102/b14220/schema.htm)
+  [Loading Tables](https://dev.mysql.com/doc/refman/8.0/en/loading-tables.html)
+  [Primary Key](https://dev.mysql.com/doc/refman/8.0/en/constraint-primary-key.html)
+  [Foreign Keys](https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html)
+  [SQL Prepared Statements](https://dev.mysql.com/doc/refman/8.0/en/sql-prepared-statements.html)
+  [Aggregate Functions](https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html)
+  [Join](https://dev.mysql.com/doc/refman/8.0/en/join.html)
 
 ## Toolset
 
